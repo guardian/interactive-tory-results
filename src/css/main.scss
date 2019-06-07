@@ -1,0 +1,71 @@
+@import "mq";
+@import "fonts";
+@import "palette";
+
+// Uncomment for embeds
+//@import "embed";
+// Uncomment for full screen (including immersive article main media)
+//@import "fullscreen";
+
+.element-atom,
+.interactive-atom {
+    margin: 0 !important;
+}
+
+.gv-bar {
+    background-color: $feature-blue;
+    height: 30px;
+    &.gv-eliminated {
+        background-color: $gu-grey-3;
+    }
+}
+
+.gv-candidate-wrapper{
+    width: 100%;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.gv-mugshot,.gv-deets {
+    display: inline-block;
+}
+
+.gv-mugshot {
+    height: 60px;
+    img {
+        height: 100%;
+        filter: grayscale(100%);
+        border-radius: 60px;
+    }
+}
+
+.gv-deets {
+    width: calc(100% - 80px);
+    vertical-align: top;
+}
+
+.gv-candidate-name {
+    @include fs-titlepiece(1);
+    font-size: 1.4em;
+    line-height: 1.4em;
+}
+
+.gv-candidate-votes {
+    @include fs-bodyHeading(2);
+    color: $news-red;
+}
+
+.gv-candidate-status {
+    @include fs-textSans(4)
+}
+
+.gv-heading {
+    border-top: 1px solid #dcdcdc;
+}
+
+.gv-subheading {
+    margin-bottom: 30px;
+    @include fs-textSans(3);
+    font-weight: 700;
+
+}

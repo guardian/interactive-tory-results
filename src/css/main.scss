@@ -15,7 +15,7 @@
 .gv-bar {
     background-color: $feature-blue;
     height: 30px;
-    &.gv-eliminated {
+    &.gv-eliminated,&.gv-out,&.gv-withdrew {
         background-color: $gu-grey-3;
     }
 }
@@ -34,8 +34,9 @@
     height: 60px;
     img {
         height: 100%;
-        filter: grayscale(100%);
+  //      filter: grayscale(100%);
         border-radius: 60px;
+        background-color:$gu-grey-3;
     }
 }
 

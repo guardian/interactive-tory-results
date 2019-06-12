@@ -18,17 +18,19 @@
                 <div class="gv-bar gv-{{statuscode}}" style="width: {{width}}"></div>
 
         <div class="gv-candidate-name">{{candidate}} <span class="gv-weirdstroke">/</span></div> <div class="gv-candidate-votes">{{votes}} votes</div>
+        <div class="gv-note gv-{{statuscode}}">{{note}}</div>
     </div>
     </div>
     {{/qualifiers}}
         <div class="gv-banding gv-eliminated"><span>Eliminated</span></div>
     {{#eliminated}}
     <div class="gv-candidate-wrapper">
-        <div class="gv-mugshot"><img src="<%= path %>/assets/{{image}}"/><div class="gv-mugshot-wash"></div></div>
+        <div class="gv-mugshot gv-{{statuscode}}"><img src="<%= path %>/assets/{{image}}"/><div class="gv-mugshot-wash"></div></div>
         <div class="gv-deets">
                 <div class="gv-bar gv-{{statuscode}}" style="width: {{width}}"></div>
 
-        <div class="gv-candidate-name">{{candidate}} <span class="gv-weirdstroke">/</span></div> <div class="gv-candidate-votes">{{votes}} votes</div>
+        <div class="gv-candidate-name">{{candidate}} <span class="gv-weirdstroke">/</span></div> <div class="gv-candidate-votes gv-{{statuscode}}">{{votes}} votes</div>
+        <div class="gv-note gv-{{statuscode}}">{{note}}</div>
     </div>
     </div>
     {{/eliminated}}

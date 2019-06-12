@@ -36,6 +36,24 @@ $inverted-blue-text: #0084C5;
     display: inline-block;
 }
 
+.gv-note {
+  @include fs-textSans(4);
+  font-weight: bold;
+}
+
+.gv-note.gv-withdrew {
+  &::before {
+    content:'';
+    background-image: url('<%= path %>/assets/arrow.png');
+    background-repeat: none;
+    background-size: contain;
+    width: 29px;
+    height: 15px;
+    position: absolute;
+    left: 72px;
+  }
+}
+
 .gv-mugshot {
     margin-top: 6px;
     height: 100px;
@@ -61,6 +79,20 @@ $inverted-blue-text: #0084C5;
 
 }
 
+.gv-mugshot {
+  &.gv-eliminated,&.gv-out,&.gv-withdrew {
+      &::before {
+      background-color: $gu-grey-3;
+      }
+  }
+}
+
+.gv-candidate-votes {
+  &.gv-eliminated,&.gv-out,&.gv-withdrew {
+      color: $neutral-60;
+  }
+}
+
 .gv-mugshot::before {
     content: "";
     height: 100px;
@@ -68,6 +100,7 @@ $inverted-blue-text: #0084C5;
     background-color: $inverted-blue;
     position: absolute;
     border-radius: 100%;
+
     @include mq(leftCol) {
         left: 0px;
         height: 140px;
@@ -76,6 +109,7 @@ $inverted-blue-text: #0084C5;
     @include mq(wide) {
         left: 80px;
     }
+
 
 }
 

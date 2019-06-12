@@ -147,7 +147,6 @@ $inverted-blue-text: #0084C5;
         padding-left: 6px;
         padding-top: 2px;
     }
-
     margin-bottom: 24px;
     @include fs-bodyCopy(2);
 }
@@ -187,26 +186,40 @@ $inverted-blue-text: #0084C5;
 .gv-banding {
 
     margin-bottom: 20px;
+    margin-left: -10px;
+
+    @include mq(mobileLandscape) {
+      margin-left: 0px;
+    }
 
 
     span {
-        background-color: black;
-        padding-left: 3px;
+        background-color: $neutral-7;
+        padding-left: 2px;
         padding-right: 6px;
     }
     span::before {
-        content: '✓ ';
-        color: $inverted-blue;
-        @include fs-bodyHeading(2);
-        font-size: 20px;
-        font-weight: 300;
-        font-style: italic;
-    }
+          content: "";
+          display: inline-block;
+          background-image: url("<%= path %>/assets/tick.svg");
+          background-size: auto 16px;
+          background-repeat: no-repeat;
+          width: 19px;
+          height: 16px;
+          margin-right: 4px;
+          margin-left: 4px;
+        }
     &.gv-eliminated {
         span::before {
-            content: '❌ ';
-            font-style: normal;
-            color: $gu-grey-3;
+            content: "";
+            display: inline-block;
+            background-image: url("<%= path %>/assets/cross.svg");
+            background-size: auto 16px;
+            background-repeat: no-repeat;
+            width: 16px;
+            height: 16px;
+            margin-right: 4px;
+            margin-left: 4px;
         }
     }
     color: white;

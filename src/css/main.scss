@@ -39,12 +39,14 @@ $inverted-blue-text: #0084C5;
 .gv-mugshot {
     margin-top: 6px;
     height: 100px;
+
     img {
         height: 100%;
-        filter: contrast(3) grayscale(100%);
+        filter: contrast(1) grayscale(100%);
         border-radius: 60px;
         background-color:$gu-grey-3;
         float: right;
+        mix-blend-mode: luminosity;
         }
     @include mq(leftCol) {
         display: inline-block;
@@ -57,18 +59,18 @@ $inverted-blue-text: #0084C5;
 
 }
 
-.gv-mugshot::after {
+.gv-mugshot::before {
     content: "";
     height: 100px;
     width: 100px;
-    background-color: $feature-blue;
+    background-color: $inverted-blue;
     position: absolute;
     @include mq(leftCol) {
         left: 120px;
     }
-    opacity: 0.8;
+    // opacity: 0.8;
     border-radius: 60px;
-    mix-blend-mode: hard-light;
+    // mix-blend-mode: hard-light;
 
 }
 

@@ -43,14 +43,16 @@ $inverted-blue-text: #0084C5;
     img {
         height: 100%;
         filter: contrast(1) grayscale(100%);
-        border-radius: 60px;
+        border-radius: 100%;
         background-color:$gu-grey-3;
         float: right;
         mix-blend-mode: luminosity;
         }
+
     @include mq(leftCol) {
         display: inline-block;
         width: 140px;
+        height: 140px;
     }
     @include mq(wide) {
         display: inline-block;
@@ -65,12 +67,15 @@ $inverted-blue-text: #0084C5;
     width: 100px;
     background-color: $inverted-blue;
     position: absolute;
+    border-radius: 100%;
     @include mq(leftCol) {
-        left: 120px;
+        left: 0px;
+        height: 140px;
+        width: 140px;
     }
-    // opacity: 0.8;
-    border-radius: 60px;
-    // mix-blend-mode: hard-light;
+    @include mq(wide) {
+        left: 80px;
+    }
 
 }
 

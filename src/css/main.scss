@@ -83,31 +83,52 @@ $inverted-blue-text: #0084C5;
     width: calc(100% - 120px);
     max-width: 600px;
     vertical-align: top;
-        @include mq(leftCol) {
-            border-left: 1px solid #dcdcdc;
-            padding-left: 6px;
-
+    @include mq(leftCol) {
         max-width: 600px;
         margin-left: 10px;
+        padding-left: 6px;
     }
     @include mq(wide) {
         max-width: 600px;
         margin-left: 10px;
     }
 
+    &:before {
+      @include mq(leftCol) {
+        content: '';
+        border-left: 1px solid #dcdcdc;
+        position: absolute;
+        height: 106px;
+        left: 150px;
+      }
+      @include mq(wide) {
+        left: 230px;
+      }
+    }
+
 }
 
 .gv-candidate-name {
     @include fs-titlepiece(1);
-    font-size: 1.4em;
-    line-height: 1.4em;
+    font-size: 28px;
+    line-height: 32px;
+
+    @include mq(leftCol) {
+      font-size: 36px;
+      line-height: 36px;
+    }
 }
 
 .gv-candidate-votes {
     @include fs-titlepiece(1);
-    font-size: 1.4em;
-    line-height: 1em;
+    font-size: 28px;
+    line-height: 32px;
     color: $inverted-blue-text;
+
+    @include mq(leftCol) {
+      font-size: 36px;
+      line-height: 36px;
+    }
 }
 
 .gv-candidate-status {

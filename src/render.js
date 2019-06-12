@@ -41,9 +41,13 @@ async function parse(data) {
             c.width = `${100 * (c.votes / leader.votes)}%`
             return c;
         });
+        var qualifiers = r.filter(c => c.statuscode == 'in');
+        var eliminated = r.filter(c => c.statuscode == 'out');
         rounds.push({
             'round' : r[0].round,
-            'results' : r
+            'results' : r,
+            'qualifiers' : qualifiers,
+            'eliminated' : eliminated
         });
         return r;
     });

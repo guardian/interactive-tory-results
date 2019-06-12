@@ -7,21 +7,27 @@
 // Uncomment for full screen (including immersive article main media)
 //@import "fullscreen";
 
+$inverted-blue-text: #0084C5;
+
 .element-atom,
 .interactive-atom {
     margin: 0 !important;
 }
 
 .gv-bar {
-    background-color: $feature-blue;
-    height: 30px;
+    margin-top: 6px;
+    background-color: $inverted-blue;
+    height: 2em;
     &.gv-eliminated,&.gv-out,&.gv-withdrew {
         background-color: $gu-grey-3;
     }
 }
 
 .gv-candidate-wrapper{
+    border-top: 1px solid #dcdcdc;
+
     width: 100%;
+
     display: block;
     margin-bottom: 12px;
 }
@@ -31,6 +37,7 @@
 }
 
 .gv-mugshot {
+    margin-top: 6px;
     height: 100px;
     img {
         height: 100%;
@@ -67,6 +74,9 @@
     max-width: 600px;
     vertical-align: top;
         @include mq(leftCol) {
+            border-left: 1px solid #dcdcdc;
+            padding-left: 6px;
+        
         max-width: 600px;
         margin-left: 10px;
     }
@@ -84,8 +94,10 @@
 }
 
 .gv-candidate-votes {
-    @include fs-bodyHeading(2);
-    color: $news-red;
+    @include fs-titlepiece(1);
+    font-size: 1.4em;
+    line-height: 1em;
+    color: $inverted-blue-text;
 }
 
 .gv-candidate-status {
@@ -103,6 +115,13 @@
 }
 
 .gv-round-description {
+    @include mq(leftCol) {
+        border-left: 1px solid #dcdcdc;
+        padding-left: 6px;
+        padding-top: 6px;
+    
+    }
+
     margin-bottom: 30px;
     @include fs-bodyCopy(1);
 }
@@ -121,7 +140,7 @@
     }
     @include mq(wide) {
         display: inline-block;
-        width: 225px;
+        width: 220px;
     }
 
 }
@@ -139,3 +158,26 @@
 
 }
 
+.gv-banding {
+
+    margin-bottom: 20px;
+
+
+    span {
+        background-color: black;
+        padding-left: 3px;
+        padding-right: 6px;
+    }
+    span::before {
+        content: '✓ ';
+        color: $inverted-blue;
+        @include fs-bodyHeading(2);
+        font-size: 20px;
+        font-weight: 300;
+        font-style: italic;
+    }
+    color: white;
+    @include fs-headline(4);
+    font-weight: bold;
+
+}

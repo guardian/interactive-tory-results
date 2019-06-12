@@ -63,9 +63,12 @@ $inverted-blue-text: #0084C5;
     width: 100px;
     background-color: $feature-blue;
     position: absolute;
-    left: 120px;
-    opacity: 0.2;
+    @include mq(leftCol) {
+        left: 120px;
+    }
+    opacity: 0.8;
     border-radius: 60px;
+    mix-blend-mode: hard-light;
 
 }
 
@@ -175,6 +178,13 @@ $inverted-blue-text: #0084C5;
         font-size: 20px;
         font-weight: 300;
         font-style: italic;
+    }
+    &.gv-eliminated {
+        span::before {
+            content: '❌ ';
+            font-style: normal;
+            color: $gu-grey-3;
+        }
     }
     color: white;
     @include fs-headline(4);

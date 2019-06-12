@@ -6,7 +6,9 @@
     <h2 class="gv-heading">{{title}}</h2>
     <div class="gv-subheading">{{date}}</div>
     </div>
-    <div class="gv-round-description">{{description}}</div>
+    <div class="gv-round-description-container">
+      <div class="gv-round-description">{{description}}</div>
+    </div>
     </div>
     <div class="gv-banding"><span>Proceeds</span></div>
     {{#qualifiers}}
@@ -15,7 +17,7 @@
         <div class="gv-deets">
                 <div class="gv-bar gv-{{statuscode}}" style="width: {{width}}"></div>
 
-        <div class="gv-candidate-name">{{candidate}} <span class="gv-weirdstroke">/</span></div> <div class="gv-candidate-votes">{{votes}} votes</div> 
+        <div class="gv-candidate-name">{{candidate}} <span class="gv-weirdstroke">/</span></div> <div class="gv-candidate-votes">{{votes}} votes</div>
     </div>
     </div>
     {{/qualifiers}}
@@ -26,7 +28,7 @@
         <div class="gv-deets">
                 <div class="gv-bar gv-{{statuscode}}" style="width: {{width}}"></div>
 
-        <div class="gv-candidate-name">{{candidate}} <span class="gv-weirdstroke">/</span></div> <div class="gv-candidate-votes">{{votes}} votes</div> 
+        <div class="gv-candidate-name">{{candidate}} <span class="gv-weirdstroke">/</span></div> <div class="gv-candidate-votes">{{votes}} votes</div>
     </div>
     </div>
     {{/eliminated}}

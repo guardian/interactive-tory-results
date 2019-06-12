@@ -79,7 +79,7 @@ $inverted-blue-text: #0084C5;
         @include mq(leftCol) {
             border-left: 1px solid #dcdcdc;
             padding-left: 6px;
-        
+
         max-width: 600px;
         margin-left: 10px;
     }
@@ -108,25 +108,48 @@ $inverted-blue-text: #0084C5;
 }
 
 .gv-heading {
+  @include fs-titlepiece(1);
+
+  @include mq(leftCol) {
+    font-size: 36px;
+  }
+  @include mq(wide) {
+    @include fs-titlepiece(3);
+  }
 }
 
 .gv-subheading {
-    @include fs-textSans(3);
+    @include fs-textSans(4);
     font-weight: 700;
     margin-bottom: 12px;
 
 }
 
-.gv-round-description {
-    @include mq(leftCol) {
+.gv-round-description-container {
+
+    &:before {
+      @include mq(leftCol) {
+        content: '';
         border-left: 1px solid #dcdcdc;
-        padding-left: 6px;
-        padding-top: 6px;
-    
+        position: absolute;
+        height: 220px;
+        left: 150px;
+      }
+      @include mq(wide) {
+        left: 230px;
+      }
     }
 
-    margin-bottom: 30px;
-    @include fs-bodyCopy(1);
+}
+
+.gv-round-description {
+    @include mq(leftCol) {
+        padding-left: 6px;
+        padding-top: 2px;
+    }
+
+    margin-bottom: 24px;
+    @include fs-bodyCopy(2);
 }
 
 
@@ -148,7 +171,7 @@ $inverted-blue-text: #0084C5;
 
 }
 
-.gv-round-description {
+.gv-round-description-container {
     max-width: 620px;
     @include mq(leftCol) {
         display: inline-block;

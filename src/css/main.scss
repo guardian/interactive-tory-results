@@ -86,17 +86,23 @@ $inverted-blue-text: #0084C5;
 }
 
 .content__standfirst {
-    @include fs-headline(3);
+    @include fs-headline(2);
     font-size: 20px;
     line-height: 24px;
-    font-weight: 300;
+    font-weight: 200;
     color: #333;
     margin-top: 12px;
     margin-bottom: 24px;
-    @include mq($until: desktop) {
-        font-size: 18px;
-        line-height: 22px;
+    max-width: 80%;
+
+    @include mq(tablet) {
+      @include fs-headline(3);
+      font-weight: 200;
+      max-width: 540px;
     }
+    @include mq(leftCol) {
+    margin-bottom: 24px;
+  }
 }
 
 .gv-bar {

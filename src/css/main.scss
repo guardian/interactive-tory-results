@@ -16,7 +16,7 @@ $inverted-blue-text: #0084C5;
 
 //header hacks
 .content__head {
-  padding-top: 12px;
+  padding-top: 24px;
 }
 .content__headline {
     @include fs-header(3);
@@ -30,6 +30,59 @@ $inverted-blue-text: #0084C5;
     @include mq($until: desktop) {
         font-size: 40px;
     }
+    &:before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    min-height: 420px;
+    z-index: 0;
+    width: 1px;
+    background-color: $neutral-86;
+    top: 600px;
+    display: none;
+
+    @include mq(leftCol) {
+      top: 4px;
+      display: block;
+      left: 0px;
+    }
+
+    @include mq(wide) {
+    }
+  }
+}
+
+.content--interactive .content__labels {
+  overflow:visible;
+  position: relative;
+  margin-left: 0px;
+  padding-top: 0px;
+  margin-bottom: 2px;
+  z-index: 10;
+}
+
+.content__label__link {
+  a {
+      cursor: pointer;
+      }
+}
+
+.label__link-wrapper {
+  width: 100%;
+  background-color: $gu-news-kicker;
+  box-shadow: 6px 0 0 $gu-news-kicker, -10px 0 0 $gu-news-kicker;
+  color: white;
+  padding-bottom: 5px;
+  line-height: 34px;
+  font-size: 20px;
+  @include mq(desktop) {
+      padding-bottom: 6px;
+  }
+
+  @include mq(leftCol) {
+    box-shadow: 10px 0 0 $gu-news-kicker, -9px 0 0 $gu-news-kicker;
+
+  }
 }
 
 .content__standfirst {

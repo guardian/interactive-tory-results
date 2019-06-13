@@ -250,15 +250,11 @@ $inverted-blue-text: #0084C5;
     margin-bottom: 20px;
     margin-left: -10px;
 
-    @include mq(mobileLandscape) {
-      margin-left: 0px;
-    }
-
-
     span {
         background-color: $neutral-7;
         padding-left: 2px;
         padding-right: 6px;
+     
     }
     span::before {
           content: "";
@@ -287,5 +283,19 @@ $inverted-blue-text: #0084C5;
     color: white;
     @include fs-headline(4);
     font-weight: bold;
+
+    @include mq(mobileLandscape) {
+        margin-left: 0px;
+      }
+      @include mq(leftCol) {
+          max-width: 140px;
+        @include fs-headline(3);      
+      }
+  
+      @include mq(wide) {
+          max-width: 240px;
+          @include fs-headline(4);      
+
+      }
 
 }

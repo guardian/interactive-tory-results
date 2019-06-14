@@ -13,8 +13,13 @@ async function getGlosses(rounds,data) {
 
     var glosses = data.rounds;
 
-    rounds = rounds.map(r => {
+    rounds = rounds.sort((a,b) => {
+        return Number(b.round) - Number(a.round)
+    }
+    )
 
+    rounds = rounds.map(r => {
+        r.incomplete = r.eliminated.length > 0 ? false : true;
         var matchinggloss = glosses.find(g => {
             return g.round == r.round
         })

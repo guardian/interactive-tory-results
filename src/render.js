@@ -3,7 +3,11 @@ import mustache from 'mustache'
 import axios from 'axios'
 import _ from 'lodash'
 
-const dataurl = 'https://interactive.guim.co.uk/docsdata-test/1blisaXnBVa7HdR6iq6hEEQJjQ2B8-hEsd6dH_WrPfS0.json';
+// LIVE
+//const dataurl = 'https://interactive.guim.co.uk/docsdata-test/1blisaXnBVa7HdR6iq6hEEQJjQ2B8-hEsd6dH_WrPfS0.json';
+
+// TEST
+const dataurl = "https://interactive.guim.co.uk/docsdata-test/1unhSDGu3P5nMnd_29K13wXIIb_LkOLyvsPdgTUhnU1o.json"
 
 async function getGlosses(rounds,data) {
 
@@ -38,7 +42,8 @@ async function parse(data) {
         });
         var leader = r[0];
         r.map(c => {
-            c.width = `${100 * (c.votes / leader.votes)}%`
+            c.width = `${100 * (c.votes / leader.votes)}%`;
+            c.withdrew = c.withdrawn.length > 0 ? true : false;
             return c;
         });
         var qualifiers = r.filter(c => c.statuscode == 'in');
@@ -52,7 +57,6 @@ async function parse(data) {
         return r;
     });
     rounds = await getGlosses(rounds,data);
-    console.log(rounds)
 
     return rounds;
 };

@@ -13,11 +13,11 @@
     <div class="gv-banding"><span>Through to next round</span></div>
     {{#qualifiers}}
     <div class="gv-candidate-wrapper">
-        <div class="gv-mugshot"><img src="<%= path %>/assets/{{image}}"/><div class="gv-mugshot-wash"></div></div>
+        <div class="gv-mugshot {{#withdrew}}gv-withdrawn{{/withdrew}}"><img src="<%= path %>/assets/{{image}}"/><div class="gv-mugshot-wash {{#withdrew}}gv-withdrawn{{/withdrew}}"></div></div>
         <div class="gv-deets">
-                <div class="gv-bar gv-{{statuscode}}" style="width: {{width}}"></div>
+                <div class="gv-bar gv-{{statuscode}} {{#withdrew}}gv-withdrawn{{/withdrew}}" style="width: {{width}}"></div>
 
-        <div class="gv-candidate-name">{{candidate}} <span class="gv-weirdstroke">/</span></div> <div class="gv-candidate-votes">{{votes}} votes</div>
+        <div class="gv-candidate-name">{{candidate}} <span class="gv-weirdstroke">/</span></div> <div class="gv-candidate-votes {{#withdrew}}gv-withdrawn{{/withdrew}}">{{votes}} votes</div>
         <div class="gv-note gv-{{statuscode}}">{{note}}</div>
     </div>
     </div>

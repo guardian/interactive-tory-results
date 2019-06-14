@@ -18,7 +18,7 @@ $inverted-blue-text: #0084C5;
     margin-top: 6px;
     background-color: $inverted-blue;
     height: 2em;
-    &.gv-eliminated,&.gv-out,&.gv-withdrew {
+    &.gv-eliminated,&.gv-out,&.gv-withdrawn {
         background-color: $gu-grey-3;
     }
 }
@@ -80,7 +80,7 @@ $inverted-blue-text: #0084C5;
 }
 
 .gv-mugshot {
-  &.gv-eliminated,&.gv-out,&.gv-withdrew {
+  &.gv-eliminated,&.gv-out,&.gv-withdrew,&.gv-withdrawn {
       &::before {
       background-color: $gu-grey-3;
       }
@@ -88,7 +88,7 @@ $inverted-blue-text: #0084C5;
 }
 
 .gv-candidate-votes {
-  &.gv-eliminated,&.gv-out,&.gv-withdrew {
+  &.gv-eliminated,&.gv-out,&.gv-withdrew,&.gv-withdrawn {
       color: $neutral-60;
   }
 }

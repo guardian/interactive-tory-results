@@ -4,10 +4,10 @@ import axios from 'axios'
 import _ from 'lodash'
 
 // LIVE
-//const dataurl = 'https://interactive.guim.co.uk/docsdata-test/1blisaXnBVa7HdR6iq6hEEQJjQ2B8-hEsd6dH_WrPfS0.json';
+const dataurl = 'https://interactive.guim.co.uk/docsdata-test/1blisaXnBVa7HdR6iq6hEEQJjQ2B8-hEsd6dH_WrPfS0.json';
 
 // TEST
-const dataurl = "https://interactive.guim.co.uk/docsdata-test/1unhSDGu3P5nMnd_29K13wXIIb_LkOLyvsPdgTUhnU1o.json"
+//const dataurl = "https://interactive.guim.co.uk/docsdata-test/1unhSDGu3P5nMnd_29K13wXIIb_LkOLyvsPdgTUhnU1o.json"
 
 async function getGlosses(rounds,data) {
 

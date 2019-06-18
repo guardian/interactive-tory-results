@@ -278,7 +278,7 @@ $inverted-blue-text: #0084C5;
   @include fs-titlepiece(1);
 
   @include mq(leftCol) {
-    font-size: 36px;
+    font-size: 34px;
   }
   @include mq(wide) {
     @include fs-titlepiece(3);
@@ -324,7 +324,7 @@ $inverted-blue-text: #0084C5;
 }
 
 .gv-round {
-    padding-bottom: 40px;
+    padding-bottom: 55px;
 }
 
 .gv-heading-wrapper {

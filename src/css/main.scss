@@ -112,6 +112,17 @@ $inverted-blue-text: #0084C5;
     &.gv-eliminated,&.gv-out,&.gv-withdrawn {
         background-color: $gu-grey-3;
     }
+    &.gv-incomplete {
+        width: 100%;
+//        background-color: #dcdcdc;
+       // background-image: linear-gradient(to right, $gu-grey-3,white)
+       background: repeating-linear-gradient(
+  -45deg,
+  white,
+  white 2px,
+#dcdcdc 2px,
+ #dcdcdc 4px)
+    }
 }
 
 .gv-candidate-wrapper{
@@ -181,6 +192,9 @@ $inverted-blue-text: #0084C5;
 .gv-candidate-votes {
   &.gv-eliminated,&.gv-out,&.gv-withdrew,&.gv-withdrawn {
       color: $neutral-60;
+  }
+  &.gv-incomplete {
+      display: none;
   }
 }
 
@@ -307,7 +321,10 @@ $inverted-blue-text: #0084C5;
 
 .gv-round-meta-wrapper {
     border-top: 1px solid #dcdcdc;
+}
 
+.gv-round {
+    padding-bottom: 40px;
 }
 
 .gv-heading-wrapper {
@@ -392,3 +409,9 @@ $inverted-blue-text: #0084C5;
       }
 
 }
+
+
+.gv-red {
+    background-color: red;
+}
+

@@ -1,6 +1,7 @@
 <div class="interactive-wrapper">
 
     {{#.}}
+    <div class="gv-round">
     <div class="gv-round-meta-wrapper">
     <div class="gv-heading-wrapper">
     <h2 class="gv-heading">{{title}}</h2>
@@ -10,19 +11,22 @@
       <div class="gv-round-description">{{description}}</div>
     </div>
     </div>
-    <div class="gv-banding"><span>Through to next round</span></div>
+{{^incomplete}}    <div class="gv-banding"><span>Through to next round</span></div>{{/incomplete}}
     {{#qualifiers}}
     <div class="gv-candidate-wrapper">
         <div class="gv-mugshot {{#withdrew}}gv-withdrawn{{/withdrew}}"><img src="<%= path %>/assets/{{image}}"/><div class="gv-mugshot-wash {{#withdrew}}gv-withdrawn{{/withdrew}}"></div></div>
         <div class="gv-deets">
-                <div class="gv-bar gv-{{statuscode}} {{#withdrew}}gv-withdrawn{{/withdrew}}" style="width: {{width}}"></div>
+                <div class="gv-bar gv-{{statuscode}} {{#withdrew}}gv-withdrawn{{/withdrew}} {{#incomplete}}gv-incomplete{{/incomplete}}" style="width: {{width}}"></div>
 
-        <div class="gv-candidate-name">{{candidate}} <span class="gv-weirdstroke">/</span></div> <div class="gv-candidate-votes {{#withdrew}}gv-withdrawn{{/withdrew}}">{{votes}} votes</div>
+        <div class="gv-candidate-name">{{candidate}} <span class="gv-weirdstroke">/</span></div> <div class="gv-candidate-votes {{#withdrew}}gv-withdrawn{{/withdrew}} {{#incomplete}}gv-incomplete{{/incomplete}}">{{votes}} votes</div>
         <div class="gv-note gv-{{statuscode}}">{{note}}</div>
     </div>
     </div>
     {{/qualifiers}}
+    {{^incomplete}}
         <div class="gv-banding gv-eliminated"><span>Eliminated</span></div>
+            {{/incomplete}}
+
     {{#eliminated}}
     <div class="gv-candidate-wrapper">
         <div class="gv-mugshot gv-{{statuscode}}"><img src="<%= path %>/assets/{{image}}"/><div class="gv-mugshot-wash"></div></div>
@@ -33,6 +37,7 @@
     </div>
     </div>
     {{/eliminated}}
+    </div>
     {{/.}}
 
 </div>

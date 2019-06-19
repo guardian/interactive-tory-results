@@ -109,6 +109,9 @@ $inverted-blue-text: #0084C5;
     margin-top: 6px;
     background-color: $inverted-blue;
     height: 2em;
+    .gv-lessen & {
+height: 1.5em;    }
+
     &.gv-eliminated,&.gv-out,&.gv-withdrawn {
         background-color: $gu-grey-3;
     }
@@ -169,6 +172,11 @@ $inverted-blue-text: #0084C5;
         mix-blend-mode: luminosity;
         }
 
+        .gv-lessen & {
+          height: 66px;
+        }
+        
+
     @include mq(leftCol) {
         display: inline-block;
         width: 140px;
@@ -206,13 +214,29 @@ $inverted-blue-text: #0084C5;
     position: absolute;
     border-radius: 100%;
 
+
+
     @include mq(leftCol) {
         left: 0px;
         height: 140px;
         width: 140px;
+
+        .gv-lessen & {
+         left: 74px;  
+        }
     }
+
+    .gv-lessen & {
+      height: 66px;
+      width: 66px;
+      
+    }
+
     @include mq(wide) {
         left: 80px;
+        .gv-lessen & {
+          left: 154px;  
+         }
     }
 
 
@@ -248,14 +272,24 @@ $inverted-blue-text: #0084C5;
 }
 
 .gv-candidate-name {
+
+  
+
     @include fs-titlepiece(1);
     font-size: 28px;
     line-height: 32px;
+
 
     @include mq(leftCol) {
       font-size: 36px;
       line-height: 36px;
     }
+
+    .gv-lessen & {
+      font-size: 20px;
+      line-height: 24px;
+    }
+
 }
 
 .gv-candidate-votes {
@@ -268,6 +302,12 @@ $inverted-blue-text: #0084C5;
       font-size: 36px;
       line-height: 36px;
     }
+
+    .gv-lessen & {
+      font-size: 20px;
+      line-height: 24px;
+    }
+
 }
 
 .gv-candidate-status {
@@ -411,7 +451,7 @@ $inverted-blue-text: #0084C5;
 }
 
 
-.gv-red {
-    background-color: red;
+.gv-lessen {
+//    background-color: red;
 }
 

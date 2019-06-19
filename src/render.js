@@ -30,11 +30,13 @@ async function getGlosses(rounds,data) {
             for (var prop in matchinggloss) {
                 r[prop] = matchinggloss[prop]
             }
+            r.lessen = r.category == 'minimised' ? true : false;
 
             return r;
 
         }
     })
+    console.log(rounds)
     return rounds;
 }
 

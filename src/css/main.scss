@@ -455,3 +455,60 @@ height: 1.5em;    }
 //    background-color: red;
 }
 
+.gv-member-chunk {
+  display: inline-block;
+}
+
+.gv-member-bar {
+  width:  calc(100% - 210px);
+  height: 100px;
+}
+
+.gv-boris-bar {
+  display: inline-block;
+  height: 100px;
+  background-color: $sport-blue;
+}
+.gv-hunt-bar {
+  display: inline-block;
+
+  height: 100px;
+  background-color: $inverted-blue;
+}
+
+.gv-halfway-label {
+@include fs-textSans(1);
+position: relative;
+left: calc(50% - 0.75em);
+top: 14px;
+}
+
+.gv-halfway-marker {
+  position: relative;
+  left:50%;
+  top: 7px;
+  
+}
+
+.gv-member-summary {
+  display: inline-block;
+  width: 100px;
+  @include fs-bodyHeading(1)
+}
+
+.gv-member-votes {
+  @include fs-titlepiece(2)
+}
+
+.gv-hunt {
+  position: absolute;
+  left: calc(100% - 100px);
+  .gv-member-votes,.gv-member-name {
+    float: right;
+  }
+}
+
+
+.gv-member-vote {
+  margin-bottom: 50px;
+}

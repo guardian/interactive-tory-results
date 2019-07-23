@@ -488,9 +488,20 @@ height: 1.5em;    }
   display: inline-block;
 }
 
+.gv-mobile-bar {
+  display: block;
+  @include mq(tablet) {
+    display: none;
+  }
+}
+
 .gv-member-bar {
+  opacity: 0;
   width:  calc(100% - 210px);
   height: 100px;
+  @include mq(tablet) {
+    opacity: 1;
+  }
 }
 
 .gv-boris-bar {

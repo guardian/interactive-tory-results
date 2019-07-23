@@ -159,6 +159,35 @@ height: 1.5em;    }
   }
 }
 
+.gv-final-mugshot {
+
+  margin-top: 6px;
+  height: 100px;
+
+  display: inline-block;
+ 
+  img {
+    height: 100%;
+    filter: contrast(1) grayscale(100%);
+    border-radius: 100%;
+    background-color:$gu-grey-3;
+    float: right;
+    mix-blend-mode: luminosity;
+    }
+  }
+
+.gv-final-mugshot::before {
+
+  content: "";
+  height: 100px;
+  width: 100px;
+  background-color: $inverted-blue;
+  position: absolute;
+  border-radius: 100%;
+
+
+}
+
 .gv-mugshot {
     margin-top: 6px;
     height: 100px;
@@ -511,4 +540,17 @@ top: 14px;
 
 .gv-member-vote {
   margin-bottom: 50px;
+
+  @include mq(desktop) {
+      padding-left: 20px;
+      padding-right: 20px;
+  }
+
+  @include mq(leftCol) {
+      margin-left: 160px;
+  }
+
+  @include mq(wide) {
+      margin-left: 240px;
+  }
 }
